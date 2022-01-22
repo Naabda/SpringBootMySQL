@@ -1,10 +1,5 @@
 package es.davidabellannavarro.springbootmysql.habilidad;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 /**
  * @author David Abellán Navarro
  * @project SpringBootMySQL
@@ -13,6 +8,13 @@ import javax.persistence.Id;
  * @github https://github.com/Naabda/SpringBootMySQL
  */
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+/**
+ * The type Habilidad.
+ */
 @Entity
 public class Habilidad {
 
@@ -25,8 +27,9 @@ public class Habilidad {
     private int energia;
     private String tipo;
 
-    /** Constructores. */
-
+    /**
+     * Constructores.
+     */
     //Constructor por defecto
     public Habilidad() {
         nombre = "";
@@ -35,6 +38,14 @@ public class Habilidad {
         tipo = "";
     }
 
+    /**
+     * Instantiates a new Habilidad.
+     *
+     * @param nombre  the nombre
+     * @param vida    the vida
+     * @param energia the energia
+     * @param tipo    the tipo
+     */
     // Constructor sobrecargado
     public Habilidad(String nombre, int vida, int energia, String tipo) {
         this.nombre = nombre;
@@ -43,6 +54,11 @@ public class Habilidad {
         this.tipo = tipo;
     }
 
+    /**
+     * Instantiates a new Habilidad.
+     *
+     * @param habilidad the habilidad
+     */
     // Constructor de copia
     public Habilidad(Habilidad habilidad) {
         this.nombre = habilidad.nombre;
@@ -51,27 +67,73 @@ public class Habilidad {
         this.tipo = habilidad.tipo;
     }
 
-    /** Métodos. */
-
     // Getters & Setters
 
+    /**
+     * Métodos.  @return the id
+     */
     public Integer getId() { return id; }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(Integer id) { this.id = id; }
 
+    /**
+     * Gets nombre.
+     *
+     * @return the nombre
+     */
     public String getNombre() { return nombre; }
 
+    /**
+     * Sets nombre.
+     *
+     * @param nombre the nombre
+     */
     public void setNombre(String nombre) { this.nombre = nombre; }
 
+    /**
+     * Gets vida.
+     *
+     * @return the vida
+     */
     public int getVida() { return vida; }
 
+    /**
+     * Sets vida.
+     *
+     * @param vida the vida
+     */
     public void setVida(int vida) { this.vida = vida; }
 
+    /**
+     * Gets energia.
+     *
+     * @return the energia
+     */
     public int getEnergia() { return energia; }
 
+    /**
+     * Sets energia.
+     *
+     * @param energia the energia
+     */
     public void setEnergia(int energia) { this.energia = energia; }
 
+    /**
+     * Gets tipo.
+     *
+     * @return the tipo
+     */
     public String getTipo() { return tipo; }
 
+    /**
+     * Sets tipo.
+     *
+     * @param tipo the tipo
+     */
     public void setTipo(String tipo) { this.tipo = tipo; }
 }

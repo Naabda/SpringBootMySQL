@@ -5,9 +5,12 @@ package es.davidabellannavarro.springbootmysql.personaje;
  * @project SpringBootMySQL
  * @course 2ºD.A.M.
  * @date 22/01/2022
- * @github https://github.com/Naabda/
+ * @github https://github.com/Naabda/SpringBootMySQL
  */
 
+/**
+ * The type Personaje not found exception.
+ */
 public class PersonajeNotFoundException extends Throwable {
     /**
      * Constructs a new throwable with the specified detail message.  The
@@ -20,7 +23,5 @@ public class PersonajeNotFoundException extends Throwable {
      * @param message the detail message. The detail message is saved for
      *                later retrieval by the {@link #getMessage()} method.
      */
-    public PersonajeNotFoundException(String message) {
-        super(message);
-    }
+    public PersonajeNotFoundException(String message) { super(message); }
 }

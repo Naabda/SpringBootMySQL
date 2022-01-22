@@ -5,7 +5,11 @@ package es.davidabellannavarro.springbootmysql.habilidad;
  * @project SpringBootMySQL
  * @course 2ºD.A.M.
  * @date 22/01/2022
- * @github https://github.com/Naabda/
+ * @github https://github.com/Naabda/SpringBootMySQL
+ */
+
+/**
+ * The type Habilidad not found exception.
  */
 public class HabilidadNotFoundException extends Throwable {
     /**

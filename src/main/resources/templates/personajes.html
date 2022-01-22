@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <title>[[${cabecera}]]</title>
+    </head>
+    <body>
+        <div class="container-fluid text-center">
+            <div>
+                <h1 class="display-1 text-success">[[${cabecera}]]</h1>
+            </div>
+            <div th:if="${mensaje}" class="alert alert-success">
+                [[${mensaje}]]
+            </div>
+            <div class="m-3">
+                <button type="button" class="btn btn-outline-success m-2">
+                    <a class="text-decoration-none link-success" th:href="@{/personajes/nuevo}">Nuevo Personaje</a>
+                </button>
+                <button type="button" class="btn btn-outline-dark m-2" onclick="volver()">Volver</button>
+            </div>
+            <div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>NOMBRE</th>
+                        <th>CLASE</th>
+                        <th>VIDA MÁXIMA</th>
+                        <th>VIDA ACTUAL</th>
+                        <th>ENERGIA MÁXIMA</th>
+                        <th>ENERGIA ACTUAL</th>
+                        <th>MONEDAS</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="personaje : ${personajeList}">
+                        <tr>
+                            <td>[[${personaje.id}]]</td>
+                            <td>[[${personaje.nombre}]]</td>
+                            <td>[[${personaje.clase}]]</td>
+                            <td>[[${personaje.vida_max}]]</td>
+                            <td>[[${personaje.vida_actual}]]</td>
+                            <td>[[${personaje.energia_max}]]</td>
+                            <td>[[${personaje.energia_actual}]]</td>
+                            <td>[[${personaje.monedas}]]</td>
+                            <td>
+                                <a class="btn fw-bold" th:href="@{'/personajes/editar/' + ${personaje.id}}">Editar</a>
+                                <a class="btn fw-bold" th:href="@{'/personajes/borrar/' + ${personaje.id}}">Borrar</a>
+                            </td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function volver() {
+                window.location = "[[@{/}]]";
+            }
+        </script>
+    </body>
+</html>
